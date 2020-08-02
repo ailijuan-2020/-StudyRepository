@@ -7,6 +7,15 @@ spring:
       password: admin-123
   application:
     name: sc-config-server
+  cloud:
+    config:
+      server:
+        git:
+          bootstrap: true
+          uri: https://github.com/ailijuan-2020/-StudyRepository.git
+          username: ailijuan-2020
+          password: ailijuan2020
+          searchPaths: '{application}'
 eureka:
   client:
     service-url:
@@ -15,3 +24,4 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     appname: sc-config-server
+
